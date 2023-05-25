@@ -1,0 +1,58 @@
+html{
+    background-color: #e5e5e5;
+    background-image: url(img/fond.png);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header{
+    width: 75%;
+    margin: 3% 0 0 3%;
+}
+
+main{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#entrada{
+    background-color: #e5e5e5;
+    padding: 25px;
+    margin: 5% 3%;
+    border-radius: 10px;
+    border:none;
+    box-shadow: 8px 8px 15px 8px darkgray;
+    resize: none;
+    font-size: 25px;
+}
+
+::placeholder{ color: rgba(10, 56, 113, 1);}
+
+#salida{
+    /*background-image: url(img/Muñeco.png);*/
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+    margin-top: -12%;
+    margin-left: 20%;
+    resize:none;
+    border-radius: 15px;
+    border-radius: 10px;
+    border:none;
+    box-shadow: 5px 5px 40px 5px darkgray;
+}
+
+#entrada, #salida:focus{
+    outline: none;
+}
+
+
+
+.material-symbols-outlined {
+    vertical-align: bottom;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 20;
+}
