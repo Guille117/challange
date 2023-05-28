@@ -26,20 +26,20 @@ main{
     font-size: 25px;
 }
 
-::placeholder{ color: rgba(10, 56, 113, 1);}
+::placeholder{ color: rgba(10, 56, 113, 1)}
 
-#salida{
-    /*background-image: url(img/Muñeco.png);*/
-    background-repeat: no-repeat;
-    background-size: 70%;
-    background-position: center;
-    margin-top: -12%;
-    margin-left: 20%;
-    resize:none;
-    border-radius: 15px;
-    border-radius: 10px;
-    border:none;
-    box-shadow: 5px 5px 40px 5px darkgray;
+.advertencia{
+    font-size: 13px;
+    color: #495057;
+}
+
+.material-symbols-outlined {
+    vertical-align: bottom;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 100,
+    'GRAD' -25,
+    'opsz' 20
 }
 
 #entrada, #salida:focus{
@@ -47,12 +47,138 @@ main{
 }
 
 
+.botones{
+    width: 100%;
+    margin: 0 auto;
+}
 
-.material-symbols-outlined {
-    vertical-align: bottom;
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 20;
+.encrip, .des{
+    width: 290px;
+    height: 47px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 24px;
+    font-size: 16px;
+}
+
+.encrip{
+    color: white;
+    background-color: #0A3871;
+    border: none;
+}
+
+.encrip:hover{
+    box-shadow: 3px 5px 5px gray;
+    cursor: pointer;  
+}
+
+ .encrip:active{
+    color: #0A3871;
+    background-color: white;
+    transition: all 0.2s;
+ }
+
+.des{
+    color: #0A3871;
+    background-color: #D8DFE8;
+    border: 1px solid #0A3871;
+}
+
+.des:hover{
+    box-shadow: 3px 5px 5px gray;
+    cursor: pointer;  
+}
+
+.des:active{
+    background-color: #0A3871;
+    color: #D8DFE8;
+    transition: all 0.2s;
+ }
+
+#salida{
+    background-image: url(img/Muñeco.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: 50% 30%;
+    margin-top: -12%;
+    /*margin-left: 40%;*/
+    resize:none;
+    border-radius: 15px;
+    border:none;
+    box-shadow: 5px 5px 40px 5px darkgray;
+}
+
+.no{
+    width: 25%;
+    margin-left: 15%;
+    position: relative;
+}
+
+.noEncontrado{
+    position:absolute;
+    top: 40%;
+    left: 5px;
+}
+
+.noEncontrado h2{
+    font-size: 19px;
+    text-align: center;
+    color: #343A40; 
+}
+
+.noEncontrado p{
+    font-size: 16px;
+    text-align: center;
+    color: #495057;
+}
+
+.copiar{
+    width: 200px;
+    height: 47px;
+    padding: 15px;
+    margin: 70px 40px;
+    border-radius: 24px;
+    font-size: 16px;
+    color: rgb(16, 145, 16);
+    background-color: #D8DFE8;
+    border: solid 1px rgb(16, 145, 16);
+}
+
+.copiar:hover{
+    box-shadow: 3px 5px 5px gray;
+    cursor: pointer;  
+}
+
+.copiar:active{
+    color: white;
+    background-color: rgb(16, 145, 16);
+}
+
+footer{
+    width: 100%;
+    background-color: rgb(216, 191, 216);
+}
+
+footer div{
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+
+}
+.logosL{
+    width: 90px;
+    height: 65px;
+    margin: 15px 40px;
+}
+
+footer p{
+    margin: 40px 65px auto 65px;
+    color:#0A3871;
+    font-size: 20px;
+    font-style: italic;
+}
+.logos{
+    width: 40px;
+    height: 40px;
+    margin: 30px 40px
 }
