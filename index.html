@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <title>Encriptador</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,200,1,200" />
         <link rel="stylesheet" href="style.css">
+        <script src = "encriptador.js" defer></script>
     </head>
 
     <body>
@@ -18,26 +19,25 @@
                     <span class="material-symbols-outlined">
                         error
                     </span>
-                    Solo letras minusculas y sin acentos.
+                    Solo letras minúsculas y sin acentos.
                 </p>
 
                 <div class="botones">
-                    <button class="encrip">Encriptar</button>
-                    <button class="des">Desencriptar</button>
+                    <button id="encrip">Encriptar</button>
+                    <button id="des">Desencriptar</button>
                 </div>
                 
             </section>
 
             <section class = "no">
-                <textarea id="salida" cols="34" rows="28"></textarea>
-                <div class="noEncontrado">
-                    <h2>Ningún mensaje fue encontrado</h2>
-                    <p>Ingresa el texto que desees encriptar o desencriptar</p>
-                </div>
-                <button class="copiar">Copiar</button>
+                <textarea id="salida" cols="20" rows="17"></textarea>
+                    <div id="noEncontrado">
+                        <h2 id = mensaje1>Ningún mensaje fue encontrado</h2>
+                        <p>Ingresa el texto que desees encriptar o desencriptar</p>
+                    </div>
+                    <button id="copiar">Copiar</button>
             </section>
         </main>
-
         <footer>
             <div>
                 <a target="_blank" href="https://www.alura.com.br/">
