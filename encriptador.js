@@ -12,12 +12,17 @@ function validarText(){
 
     let estado = 1
     let caracteres = ""    
+    const entregar = ''
     
     if(mensaje.value != ""){
         caracteres = mensaje.value.match(/[a-z ñ]/g)     //almacena todos los caracteres validos
         
-        if(mensaje.value.length == caracteres.length){
-            estado = 2
+        try {
+            if(mensaje.value.length == caracteres.length){
+                estado = 2
+            }
+        } catch (error) {
+            estado = 1
         }
         
     }else{
@@ -27,13 +32,13 @@ function validarText(){
     return estado
 }
 
-const pareja1 = {
-    a: 'ai',
-    e: 'enter',
-    i: 'imes',
-    o: 'ober',
-    u: 'ufat'
-}
+const parejas =[
+    ['e', 'enter'],
+    ['i', 'imes'],
+    ['o', 'ober'],
+    ['a', 'ai'],
+    ['u', 'ufat']
+] 
 
 
 
@@ -44,21 +49,14 @@ function encriptar(){
         
     }else{
         if(estado == 2){
-            try {
-                let mensa
-                textoValido()
-                let mensajeFinal = ""
+            textoValido()
 
-                for(let i=0; i<mensaje.value.length; i++){
-                    mensajeFinal += pareja1[mensaje.value[i]] ?? mensaje.value[i]
-                }
-                mostrar.value = mensajeFinal
-                mensaje.value = ""
-                console.log(mensajeFinal)
-
-            } catch (error) {
-                textoInvalido()
+            for(let i=0; i < 5; i++){
+                mensaje.value = mensaje.value.replaceAll(parejas[i][0], parejas[i][1])
             }
+
+            mostrar.value = mensaje.value
+            mensaje.value = ""
         }else{
             textoInvalido()
         }
@@ -69,7 +67,7 @@ function sinTexto(){
     if(mostrar.value.length == 0){
         document.getElementById("mensaje1").style.textShadow = "4px 5px 7px red"
     }else{
-        window.alert("Ningún mensaje encontrado")
+        window.alert("Ningún mensaje fue encontrado")
     }
 }
 
