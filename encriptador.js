@@ -6,6 +6,7 @@ const mostrar = document.getElementById("salida")
 const btnCopiar = document.getElementById("copiar")
 
 btnEncriptar.addEventListener('click', encriptar)
+btnDesencriptar.addEventListener('click', desencriptar)
 
 function validarText(){
     // 0 = text area vacio, 1 = texto ingresado invalido, 2 = text valido
@@ -57,6 +58,26 @@ function encriptar(){
 
             mostrar.value = mensaje.value
             mensaje.value = ""
+        }else{
+            textoInvalido()
+        }
+    }
+}
+
+function desencriptar(){
+    const estado = validarText()
+    if(estado == 0){
+        sinTexto()
+    }else{
+        if(estado == 2){
+            textoValido()
+            
+            for(let i = 0; i < 5; i++){
+                mensaje.value = mensaje.value.replaceAll(parejas[i][1], parejas[i][0])
+            }
+
+            mostrar.value = mensaje.value
+            mensaje.value = ''
         }else{
             textoInvalido()
         }
