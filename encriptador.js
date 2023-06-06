@@ -2,24 +2,27 @@
 let mensaje = document.getElementById("entrada")
 const btnEncriptar = document.getElementById("encrip")
 const btnDesencriptar = document.getElementById("des")
-const mostrar = document.getElementById("salida")
-const btnCopiar = document.getElementById("copiar")
+let mostrar = document.getElementById("salida")
+let btnCopiar = document.getElementById("copiar")
 
 btnEncriptar.addEventListener('click', encriptar)
 btnDesencriptar.addEventListener('click', desencriptar)
+btnCopiar.addEventListener('click', copiar)
 
 function validarText(){
     // 0 = text area vacio, 1 = texto ingresado invalido, 2 = text valido
 
-    let estado = 1
-    let caracteres = ""    
-    const entregar = ''
+    let estado = 1      // por defecto tendra el valor de 1
+    let caracteres = ""   
     
     if(mensaje.value != ""){
-        caracteres = mensaje.value.match(/[a-z ñ]/g)     //almacena todos los caracteres validos
+        caracteres = mensaje.value.match(/[a-z ñ]/g)     //le pasamos todos los caracteres validos que coincidan
         
         try {
-            if(mensaje.value.length == caracteres.length){
+            /* si el tamaño del mensaje ingresado es igual a el tamaño de caracteres validos que tiene el mensaje y
+            que almacenamos en la variable "caracteres" quiere decir que el usuario ingreso un texto 
+            valido -> sin mayusculas, tildes o caracteres especiales */
+            if(mensaje.value.length == caracteres.length){ 
                 estado = 2
             }
         } catch (error) {
@@ -33,7 +36,7 @@ function validarText(){
     return estado
 }
 
-const parejas =[
+const parejas =[        // arreglo de parejas
     ['e', 'enter'],
     ['i', 'imes'],
     ['o', 'ober'],
@@ -52,12 +55,12 @@ function encriptar(){
         if(estado == 2){
             textoValido()
 
-            for(let i=0; i < 5; i++){
+            for(let i=0; i < 5; i++){       // encriptamos
                 mensaje.value = mensaje.value.replaceAll(parejas[i][0], parejas[i][1])
             }
 
-            mostrar.value = mensaje.value
-            mensaje.value = ""
+            mostrar.value = mensaje.value       // mostramos mensaje encriptado
+            mensaje.value = ""      // limpiamos area del mensaje
         }else{
             textoInvalido()
         }
@@ -72,16 +75,21 @@ function desencriptar(){
         if(estado == 2){
             textoValido()
             
-            for(let i = 0; i < 5; i++){
+            for(let i = 0; i < 5; i++){     // desencriptamos
                 mensaje.value = mensaje.value.replaceAll(parejas[i][1], parejas[i][0])
             }
 
-            mostrar.value = mensaje.value
-            mensaje.value = ''
+            mostrar.value = mensaje.value       // mostramos mensaje desencriptado
+            mensaje.value = ''      // limpiamos area del mensaje
         }else{
             textoInvalido()
         }
     }
+}
+
+function copiar(){
+    mostrar.select()
+    document.execCommand('copy')
 }
 
 function sinTexto(){
